@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #results {
+    max-height: 70vh;        /* max 70% magasság */
+    overflow-y: auto;        /* görgethető függőlegesen */
+  }
+  
+  #loadingSpinner {
+    display: none;
+  }
+  /* Body – középre rendezett tartalom, szürke háttér, Roboto betűtípus, betűméret 140% */
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 140%;
+    background: url('https://i.redd.it/lfndtoirttvx.jpg') no-repeat center center fixed;
+    height: 100vh;
+    position: relative;
+    background-size: cover; /* 💡 Ez méretezi a képet a teljes képernyőhöz */
+
+  }
+  
+  /* Container – a tartalom dobozának stílusa */
+  .container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(15, 1, 1, 0.439); /* áttetsző háttér */
+    backdrop-filter: blur(150px);  /* a mögötte lévő tartalom elmosódik */
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 0 rgba(188, 0, 126, 5.9);
+    backdrop-filter: blur(10px);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column; /* vagy row, attól függően, hogy hogyan szeretnéd elrendezni a tartalmat */
+    justify-content: center; /* függőleges középre igazítás (ha a konténernek van meghatározott magassága) */
+    align-items: center;     /* vízszintes középre igazítás */
+    color: #fff;
+}
+
+  
+  
+  /* "Vissza a főoldalra" gomb – mindig a bal felső sarokban, narancssárga, hoverkor nagyobb és sötétebb */
+  #backHomeButton {
+    position: fixed;
+    top: 65px;
+    right: 20px;width: 200px;
+    height: 50px;
+    color: #4d0b59b8;
+    font-size: 18px;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.587);
+    border-radius: 50px;
+    border: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  #backHomeButton:hover {
+    background-color: #4d0b59b8;
+      color: #fff;
+    }
+  
+  /* Csatlakozás gomb – világos zöld, hoverkor kicsit nagyobb és még világosabb */
+  #btnJoin {
+    background-color: #4d0b59b8; /* világos zöld */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 7px 20px;
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 120%;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    border-radius: 50px;
+  }
+  #btnJoin:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Válasz küldése mező és gomb – kezdetben rejtett; a gomb hasonló stílus, mint a csatlakozás gomb */
+  #answer {
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 140%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 50px;
+
+  }
+  #btnAnswer {
+    background-color: #4d0b5996; /* világos zöld */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 140%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    margin-top: 10px;
+    border-radius: 50px;
+
+  }
+  #btnAnswer:hover {
+    background-color: #4d0b59d2; /* kissé világosabb zöld */
+    transform: scale(1.1);
+  }
+  
+  
+  /* Ellenfél neve és pontszámok megjelenítése – középre rendezve */
+  #opponent,
+  #scores {
+    font-family: 'Poppins', sans-serif;
+    font-size: 140%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Alapértelmezett elrejtés osztállyal (pl. a játékterület egyes elemei) */
+  .hidden {
+    display: none;
+  }
+
+  #username {
+    font-size: 1.4em;    /* növeli a betűméretet */
+    padding: 15px;       /* több belső tér a mezőben */
+    height: 50px;        /* rögzített magasság, ha szükséges */
+    width: 70%;         /* teljes szélesség */
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 20px; /* a sarkok 10px sugarú lekerekítése */
+    background-color:  rgba(255, 255, 255, 0.313);
+    border: none;
+    color: #fff;
+  }
+
+  #username::placeholder {
+    color: #fff;
+  }
+  
+  /* Responsive módosítások, ha szükséges */
+  @media (max-width: 768px) {
+    .container {
+      margin: 10px;
+    }
+  }
+h2 {
+    font-size: 100%em;
+    color: #fff;
+  
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: white;
+  z-index: 999;
+}
+
+.gamedescription{
+  background-color: rgba(0, 0, 0, 0.4); /* eltérő háttér a leírásnak */
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 30px;
+  color: #fff;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+#waiting {
+  min-height: 100px;
+  padding: 20px;
+}
+#introSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#gameWrapper.hidden,
+#gameWrapper:has(#gameArea.hidden) {
+  display: none !important;
+}
+#joinGame {
+
+  background-color: rgba(15, 1, 1, 0.439);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  margin-right: 15px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.4rem;
+}
+#joinGame,
+#gameDescriptionContainer {
+  max-width: 800px;
+  width: 100%;
+}
+
+
+#joinGame.hidden {
+  display: none !important;
+}

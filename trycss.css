@@ -1,0 +1,113 @@
+  body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            color: white;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images8.alphacoders.com/679/679478.jpg') no-repeat center center fixed;
+            background-size: cover; /* 💡 Ez méretezi a képet a teljes képernyőhöz */
+
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(17, 17, 17, 0.3);
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a:hover{
+            background-color: #e57606a5;
+        }
+
+        .sidebar a.active {
+            background-color: #e57506e4;
+
+        }
+
+        /* Title Box */
+        .title-box {
+            width: 800px;
+            height: 250px;
+            background-color: #0000007b;
+            font-family: 'Poppins', sans-serif;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 1px;
+            border-radius: 20px;
+            font-size: 25px;
+            position: relative;
+            margin-bottom: 5px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        /* Main content styles */
+        .main {
+            margin-left: 270px;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .button {
+            width: 500px;
+            height: 200px;
+            background-color: #0000007b;
+            color: white;
+            font-size: 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #c8293d;
+            transform: scale(1.05);
+        }
+
+        .sidebar a {
+            border: none !important;
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            color: white;
+            z-index: 999;
+        }

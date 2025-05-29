@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Játék</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gamecss.css">
+
+</head>
+<header id="playerCounts" style="position: fixed; top: 0; width: 100%; background: #1a1a1a4c; color: #fff; padding: 10px; text-align: center;">
+  Várakozó játékosok: <span id="waitingCount">0</span> | Aktív játékosok: <span id="activeCount">0</span>
+</header>
+
+<body>
+  <!-- Back to Home button --><button id="backHomeButton" onclick="location.href='try.html'">vissza a főoldalra</button>
+
+<!-- Névbeírás és leírás egymás alatt -->
+<div id="introSection">
+    <!-- Névbeírás és csatlakozás -->
+    <div id="joinGame" class="card">
+      <h2>Játssz és teszteld Python tudásodat a többi játékos ellen!</h2>
+      <input type="text" id="username" placeholder="Felhasználónév">
+      <button id="btnJoin">Csatlakozás</button>
+    </div>
+
+  <div class="container gameDescription" id="gameDescriptionContainer">
+    <h3>Játék leírása</h3>
+    <p>A játék kezdetén adj meg egy felhasználónevet majd nyomj rá a csatlakozás gombra. Eztután egy várólistára kerülsz, ahola  rendszer talál neked egy ellenfelet. Ha talált ellenfelet elindul a játék, ahol kérdésekre kell válaszolnod egy körökre oszott játékban, minden helyes válasz 1 pont. Sok siekrt!</p>
+    <p>Sok sikert!🚀🎮</p>
+  </div>
+</div>
+
+<!-- A játékterület, ami csak később jelenik meg -->
+<div id="gameWrapper" class="container hidden">
+  <div id="gameArea" class="hidden">
+    <!-- Várakozás blokk -->
+    <div id="waiting" class="card hidden">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <span id="waitingText">Várakozás az ellenfélre...</span>
+      </div>
+    </div>
+
+    <div id="globalSpinner" style="display: none; margin-top: 20px; text-align: center;">
+      <img src="spinner.gif" alt="Betöltés..." style="width: 60px; height: 60px;" />
+    </div>   
+
+    <div id="opponent" class="card hidden"></div>
+
+    <div id="gameContent" class="card hidden">
+      <div id="questionCounter" class="hidden"></div>
+      <div id="question"></div>
+      <div id="timer" class="hidden" style="margin-top: 10px;"></div>
+      <input type="text" id="answer" class="hidden">
+      <button id="btnAnswer" class="hidden">Válasz küldése</button>
+    </div>
+
+    <div id="scores" class="card hidden"></div>
+    <div id="results" class="card hidden"></div>
+  </div>
+</div>
+
+ 
+
+  <footer class="footer">
+    © <span id="year"></span> Készítette: <strong>Aranyossy Levente</strong>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="gamejs.js"></script>
+</body>
+</html>
