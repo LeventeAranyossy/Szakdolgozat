@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regisztráció</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/views/registercss.css">
+
+</head>
+<body>
+  <button id="backHomeButton" onclick="window.location.href='/'">Vissza a főoldalra</button>
+
+  <div class="inFormBackground">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="inLoginForm">
+      <form id="registerForm">
+        <div class="title">
+          <h3>Regisztráció</h3>
+        </div>
+        <div class="inputGroup">
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="E-mail cím" required />
+        </div>
+        <div class="inputGroup">
+          <label for="password">Jelszó</label>
+          <input type="password" name="password" placeholder="Jelszó" required />
+        </div>
+        <div class="inputGroup">
+          <label for="vorname">Keresztnév</label>
+          <input type="text" name="vorname" placeholder="Keresztnév" required />
+        </div>
+        <div class="inputGroup">
+          <label for="surname">Vezetéknév</label>
+          <input type="text" name="surname" placeholder="Vezetéknév" required />
+        </div>
+        <div class="inputGroup">
+          <label for="role">Szerep</label>
+          <select name="role" required>
+            <option value="" disabled selected>Válassz szerepet</option>
+            <option value="teacher">Tanár</option>
+            <option value="student">Diák</option>
+          </select>
+        </div>
+        <button type="submit" class="submitForm">Regisztráció</button>
+        <a href="/views/login.html" class="form-link">Már van fiókod? Jelentkezz be!</a>
+      </form>
+    </div>
+  </div>
+  <script src="/views/registerjs.js"></script>
+
+</body>
+</html>

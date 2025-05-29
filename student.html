@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Diák Felület</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/views/studentcss.css">
+
+</head>
+<body>
+
+  <button class="logout-button" onclick="logout()">Kijelentkezés</button>
+  <div class="wrapper">
+    <div class="dashboard-header">
+      <h1 id="welcomeMsg">Üdvözöljük!</h1>
+    </div>
+  
+  <div class="task-topbar">
+    <div id="notification" class="notification"></div>
+  
+    <div id="quizJoinCard">
+      <h3>🎮 Csatlakozás élő kvízhez</h3>
+      <input type="text" id="quizCodeInput" placeholder="Szobakód (pl. 3Tg8B)">
+      <button onclick="joinQuiz()">Csatlakozás</button>
+  
+      <div id="quizGameArea">
+        <p id="quizQuestionText"></p>
+        <input type="text" id="quizAnswerInput" placeholder="Válasz">
+        <button onclick="submitQuizAnswer()">Küldés</button>
+        <p id="quizScoreInfo"></p>
+      </div>
+    </div>
+  </div>
+  <div id="resultsModal">
+    <div class="results-card">
+      <h3>🏁 Kvíz vége! Eredmények:</h3>
+      <div id="resultsContent" class="results-content"></div>
+      <button class="modal-close-btn" onclick="document.getElementById('resultsModal').style.display='none'">
+        Bezárás
+      </button>
+    </div>
+  </div>
+  
+  
+  <div class="task-container" id="taskList"></div>
+   
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/views/studentjs.js"></script>
+
+
+</body>
+</html>

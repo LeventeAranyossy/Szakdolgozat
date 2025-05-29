@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teacher Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/views/teachercss.css">
+
+    
+  </head>
+  <body>
+    <header>
+      <h2 id="welcomeMessage">Üdvözöljük!</h2>
+      <button class="logout-button" onclick="window.location.href='/logout'">Kijelentkezés</button>
+    </header>
+    
+    <div class="tabs">
+      <div class="tab active" onclick="showSection('students')">👨‍🎓 Diákok</div>
+      <div class="tab" onclick="showSection('tasks')">📂 Feladatok</div>
+      <div class="tab" onclick="showSection('assign')">📝 Új feladat</div>
+      <div class="tab" onclick="showSection('quiz')">🧠 Tömeges kvíz</div>
+    </div>
+
+    <div class="side-panel" id="studentSidePanel">
+      <h3>🎓 Diák panel</h3>
+      <p>Diákok keresése és listázása</p>
+      <input type="text" id="studentSearch" placeholder="Keresés..." oninput="filterStudents()">
+      <div id="studentList" class="dropdown"></div>
+    </div>
+    
+<div class="side-panel" id="taskSidePanel" style="display: none;">
+  <h3>📂 Feladat panel</h3>
+  <p>Feladatok keresése és értékelése</p>
+  <input type="text" id="taskSearch" placeholder="Feladat keresése..." oninput="filterTasks()">
+  <div id="taskList" class="dropdown"></div>
+</div>
+
+    
+
+<div id="students" class="content-section active">
+  <div id="studentTaskDisplay" class="main-content-panel">
+  </div>
+</div>
+
+<div id="tasks" class="content-section">
+  <div id="taskReviewDisplay" class="main-content-panel">
+  </div>
+</div>
+    
+<div id="assign" class="content-section">
+  <h2>Új feladat létrehozása</h2>
+
+  <div style="display: flex; gap: 30px; align-items: flex-start;">
+
+    <div style="display: flex; flex-direction: column; gap: 30px; flex: 1;">
+      
+      <div>
+        <input type="text" id="taskStudentSearch" placeholder="Diák keresése..." oninput="filterStudentsForTask()">
+        <div id="taskStudentList" class="dropdown"></div>
+      </div>
+
+      <div>
+        <form onsubmit="assignTask(event)">
+          <input type="text" id="taskName" placeholder="Feladat neve" required style="margin-top: 20px;"><br>
+          <textarea id="taskDesc" placeholder="Leírás" required></textarea><br>
+          <button type="submit">Küldés</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div id="selectedStudentsBox">
+      <h4 style="margin-top: 0;">✅ Kiválasztott diákok</h4>
+      <div id="selectedStudentList" style="display: flex; flex-direction: column; gap: 10px;"></div>
+    </div>
+
+  </div>
+</div>
+
+
+    
+<div id="quiz" class="content-section" style="display: none;">
+  <h2>Tömeges kvíz</h2>
+      <button onclick="generateRoomCode()">🔑 Szobakód generálása</button>
+      <p id="roomCodeDisplay" style="font-weight:bold; font-size:1.2em; color:#fff"></p>
+    
+      <label for="quizFile" style="display:block; margin-top:15px; color:white;">📂 Válassz JSON fájlt:</label>
+      <input type="file" id="quizFile" accept=".json" style="background-color: rgba(255,255,255,0.1); border: 1px dashed white; padding: 10px; color: white; border-radius: 10px; margin-bottom: 10px;">
+    
+      <button id="uploadQuizBtn" onclick="uploadQuizQuestions()">Feltöltés</button>
+    
+      <div id="quizStatus" style="margin:10px 0; color:white;">
+        <p id="quizQuestionText" style="font-weight:bold;"></p>
+        <p id="quizCountdownText" style="margin-top:5px;"></p>
+      </div>
+      <p id="quizWarning" style="color: crimson; font-weight: bold; margin-top: 10px; display: none;"></p>
+      <p id="joinedCount" style="color:white;">Csatlakozott diákok száma: 0</p>
+      <button id="startNewQuizBtn" disabled style="display: none;">▶️ Új kvíz indítása</button>
+
+    </div>
+<div id="resultsModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+background:rgba(0,0,0,0.8); backdrop-filter: blur(3px); z-index:9999; justify-content:center; align-items:center;">
+
+<div style="background:#1e1e2f; color:white; padding:30px; border-radius:10px; max-width:500px; width:90%;">
+  <h3>🏁 Kvíz vége! Eredmények:</h3>
+  <div id="resultsContent" style="margin-top:15px;"></div>
+  <button onclick="closeResultsModal()" style="margin-top:20px; background-color:#00aa66; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
+    Bezárás
+  </button>
+</div>
+</div>
+
+    <div id="extraCardsWrapper" style="display:flex; gap:20px; flex-wrap:wrap; max-width:1200px; width:100%; justify-content:space-between;"></div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/views/teacherjs.js"></script>
+
+  </body>
+</html>

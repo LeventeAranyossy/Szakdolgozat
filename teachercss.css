@@ -1,0 +1,382 @@
+ #quiz {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #0000004e;
+        border-radius: 10px;
+        border: 1px solid #444;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        margin-top: 1rem;
+      }
+      
+      
+      
+      #quiz button {
+        background-color: #007acc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+      }
+      
+      #quiz button:hover {
+        background-color: #005a99;
+      }
+      
+      #quizFile {
+        background-color: rgba(255,255,255,0.1);
+        border: 1px dashed white;
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      
+      #roomCodeDisplay,
+      #quizQuestionText,
+      #quizCountdownText,
+      #joinedCount {
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      
+
+    #selectedStudentsBox { border-radius: 50px;
+      height: 3rem;
+      border: none;
+      width: 16rem;
+      font-family: 'Poppins', sans-serif;
+      margin-right: 100rem;      
+      background-color: #00000088;
+      color: rgb(255, 255, 255);
+      padding: 10px 15px;
+    }
+    
+    #selectedStudentList {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #selectedStudentList .dropdown-item:hover {
+      background-color: #00000088;
+    }
+      #assign h2 {
+        margin-top: 2rem;
+      }
+      
+      #assign form {
+        margin-top: 5px;
+        background-color: #00000088;
+        padding: 20px;
+        border-radius: 50px;
+        width: 30rem;
+      }
+      #taskStudentSearch {
+        border-radius: 50px;
+        height: 3rem;
+        border: none;
+        width: 16rem;
+        font-family: 'Poppins', sans-serif;
+        margin-left: 1px;
+        background-color: #00000088;
+        color: rgb(255, 255, 255);
+        padding: 0 1rem;
+      }
+      
+      
+      #assign input[type="text"],
+      #assign textarea {
+        font-family: 'Poppins', sans-serif;
+        border-radius: 50px;
+        border: none;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 25rem;
+        font-size: 1.1rem;
+        resize: none;
+
+      }
+      
+      #assign button[type="submit"] {
+        background-color: #140085;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease-in-out;
+      }
+      
+      #assign button[type="submit"]:hover {
+        background-color: #1f7e37;
+      }
+
+
+      .close-btn {
+        background-color: crimson;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        width: 10rem;
+        height: 2rem;
+      }
+      .close-btn:hover {
+        background-color: darkred;
+      }
+      .save-btn {
+        background-color: #00aa55;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+        width: 12rem;
+        height: 2rem;
+      }
+      
+      .save-btn:hover {
+        background-color: #007f3f;
+      }
+      .submission-item {
+        background-color: #0000004e;
+        padding: 15px 20px;
+        border-radius: 10px;
+        color: white;
+        border: 1px solid #444;
+        margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .submission-item p {
+        font-weight: bold;
+        margin: 0 0 10px 0;
+      }
+      
+      .submission-item a {
+        color: #00aaff;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 5px;
+      }
+      
+      .submission-item a:hover {
+        text-decoration: underline;
+      }
+      
+      .submission-item input,
+      .submission-item textarea {
+        margin-top: 10px;
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        font-size: 1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+      
+      .submission-item textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      
+      #taskSearch {
+        border-radius: 50px;
+        height: 3rem;
+        border: none;
+        width: 16rem;
+        font-family: 'Poppins', sans-serif;
+        margin-left: 1px;
+        font-size: 1.2rem;
+        padding-left: 1rem;
+      }
+      #taskList.dropdown {
+        margin-top: 1rem;
+        padding: 1rem;
+        font-family: 'Poppins', sans-serif;
+        width: 15rem;
+        font-size: 1.2rem;
+      }
+      
+      #taskList .dropdown-item {
+        cursor: pointer;
+        border-bottom: 1px solid white;
+        margin-bottom: 10px;
+      }
+      
+      #taskList .dropdown-item:hover {
+        background-color: #cacaca79;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: url('https://i.redd.it/lfndtoirttvx.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+      }
+    
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #00000088;
+        backdrop-filter: blur(5px);
+      }
+    
+      .tabs {
+        display: flex;
+        justify-content: center;
+        background-color: #00000049;
+        backdrop-filter: blur(5px);
+        padding: 10px;
+      }
+    
+      .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius:50px;
+        margin: 0 10px;
+        background-color: #0700529a;
+      }
+    
+      .tab:hover, .tab.active {
+        background-color: #ce00e19a;
+      }
+    
+      .content-section {
+        display: none;
+        padding: 20px;
+      }
+    
+      .content-section.active {
+        display: block;
+      }
+    
+      .logout-button {
+        font-family: 'Poppins', sans-serif;
+        padding: 10px 20px;
+        background-color: rgba(0, 124, 195, 0.494);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+      }
+    
+      .logout-button:hover {
+        background-color: rgb(128, 0, 202);
+        transform: scale(1.1);
+      }
+
+      #studentSearch{
+        border-radius: 50px;
+        height: 3rem;
+        border: none;
+        width: 16rem;
+        font-family: 'Poppins', sans-serif;
+        margin-left: 1px;
+      }
+
+      .dropdown{
+        margin-top: 1rem;
+        padding: 1rem;
+        font-family: 'Poppins', sans-serif;
+        width: 15rem;
+        font-size: 1.2rem;
+      }
+
+      .dropdown-item {
+        cursor: pointer;
+        border-bottom: 1px solid white;
+        margin-bottom: 10px;
+      }
+      .dropdown-item:hover {
+        background-color: #cacaca79;
+      }
+      #studentlist{
+        background-color: #fff;
+      }
+
+      .side-panel {
+        position: absolute;
+        top: calc(114px + 50px + 1em);
+        min-height: 100vh; /* legalább akkora, mint a viewport */
+        align-self: stretch;
+        min-height: 100vh;
+        left: 0;
+        width: 18rem;
+        background-color: #00000093;
+        padding: 20px;
+        border: none;
+        overflow-y: auto; /* csak a sidebar belseje scrollozódjon, ha túl hosszú */
+        z-index: 1000;
+
+      }
+      .main-wrapper {
+        display: flex;
+      }
+      input {
+        font-size: 1.2rem; /* vagy pl. 18px */
+        padding-left: 1rem; /* vagy pl. 16px */
+
+      }
+      .main-content-panel {
+        margin-left: 300px; /* eltolás a sidebar miatt */
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .task-card {
+        background-color: #0000004e;
+        padding: 15px 20px;
+        border-radius: 10px;
+        color: white;
+      }
+      
+      .task-card a {
+        color: #00aaff;
+        text-decoration: none;
+      }
+      
+      .task-card .status {
+        font-size: 1.1rem;
+        margin-top: 5px;
+      }
+      #studentTaskDisplay {
+        margin-left: 300px; /* oldalpanel mellett középen jelenik meg */
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      #taskReviewDisplay {
+        margin-left: 300px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/views/logincss.css">
+
+</head>
+<body>
+        <button id="backHomeButton" onclick="window.location.href='/'">Vissza a főoldalra</button>
+
+    <div class="inFormBackground">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="inLoginForm">
+            <form id="loginForm">
+                <div class="title">
+                    <h3>Bejelentkezés</h3>
+                </div>
+                <div class="inputGroup">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="E-mail cím" id="email" name="email" required>
+                </div>
+                <div class="inputGroup">
+                    <label for="password">Jelszó</label>
+                    <input type="password" placeholder="Jelszó" id="password" name="password" required>
+                </div>
+                <button type="submit" class="submitForm">Bejelentkezés</button>
+                <a href="/register" class="register-link">Még nincs fiókod? Regisztrálj!</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="/views/loginjs.js"></script>
+
+</body>
+</html>
